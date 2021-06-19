@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+
+    {% if message == "valid" %}
+            <h1> Welcome User </h1>
+    {% elif message == "invalid" %}
+            <h1> Sorry Invalid User</h1>
+    {% else %}
+         <form method="post" action="/index/">
+            {% csrf_token %}
+            <table align="center" border="2">
+            <tr>
+                <th colspan="2">Login Page</th>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" placeholder="Username" required name="t1"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="Password" required name="t2"></td>
+            </tr>
+            <tr>
+                <th colspan="2"><button type="submit">Login</button> </th>
+            </tr>
+        </table>
+         </form>
+    {% endif %}
+
+
+
+
+
+</body>
+</html>
