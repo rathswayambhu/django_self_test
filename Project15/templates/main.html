@@ -1,0 +1,11 @@
+
+{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'main_menu.html' %}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+        <img src="{% static 'images/homebanner.png'%}" width="80%">
+{% endblock %}
