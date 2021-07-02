@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(247,186,159,0.67);">
+  <div class="container-fluid">
+    <h3 style="padding-right: 20px"></h3>
+      {% load static %}
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" >
+            <a class="navbar-brand" href="{% url 'common_page' %}"><img src="{% static 'images/cam2.png' %}" alt="" width="25" height="20" class="d-inline-block align-justify">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'intern' %}">Intern</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'mentor' %}">Mentor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'admin' %}">Admin</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+

@@ -13,7 +13,7 @@ def showRegisterPage(request):
         con = request.POST.get("contact")
         loc = request.POST.get("location")
         email = request.POST.get("email")
-        password = request.POST.get("password")
+        password = request.POST.get("password") 
 
         Registration(name=n,contact=con,location=loc,email=email,password=password).save()
 

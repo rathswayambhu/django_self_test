@@ -1,0 +1,188 @@
+
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="{% url 'intern_registration' %}" method="post">
+                    {% csrf_token %}
+                <style>
+                    #rgn {
+                        border-collapse: collapse;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        width: 300px;
+                    }
+                </style>
+                    <table id="rgn" align="center" bgcolor="#c5ba60">
+                    <tr align="center">
+                        <th>
+                            <h3>New Registration</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                             <input
+                                     type="text"
+                                     required
+                                     value="{{ data.0 }}"
+                                     placeholder="Name"
+                                     name="intern_name"
+                                     class="form-control"
+                                     aria-label="Sizing example input"
+                                     aria-describedby="inputGroup-sizing-default">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                             <input
+                                     type="tel"
+                                     required
+                                     value="{{ data.1 }}"
+                                     placeholder="Contact No"
+                                     name="intern_contact"
+                                     class="form-control"
+                                     aria-label="Sizing example input"
+                                     aria-describedby="inputGroup-sizing-default">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                             <input
+                                     type="email"
+                                     required
+                                     value="{{ data.2 }}"
+                                     placeholder="Email"
+                                     name="intern_email"
+                                     class="form-control"
+                                     aria-label="Sizing example input"
+                                     aria-describedby="inputGroup-sizing-default">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                             <input
+                                     type="password"
+                                     required
+                                     placeholder="Password"
+                                     name="intern_password"
+                                     class="form-control"
+                                     aria-label="Sizing example input"
+                                     aria-describedby="inputGroup-sizing-default">
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <th>
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </th>
+                    </tr>
+
+                    {% if data.3 %}
+                        <tr>
+                        <th>
+                            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                <div>
+                                    {{ data.3 }}
+                                </div>
+                            </div>
+                        </th>
+                        </tr>
+                    {% endif %}
+
+                    {% if message %}
+                            <tr>
+                                <th>
+                                    <div class="alert alert-success" role="alert">
+                                        {{ message }}
+                                    </div>
+                                    {% comment %}<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"></svg>
+                                        <div>
+                                            {{ message }}
+                                        </div>
+                                    </div>{% endcomment %}
+                                </th>
+                            </tr>
+                        {% endif %}
+
+
+                </table>
+                </form>
+            </div>
+            <div class="col">
+                <form action="" method="post">
+                <style>
+                    #lgn {
+                        border-collapse: collapse;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        width: 300px;
+                    }
+                </style>
+                <table id="lgn" align="center" bgcolor="#38c5ae" >
+                    <tr align="center">
+                        <th>
+                            <h3>Login</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                             <input
+                                     type="email"
+                                     required
+                                     placeholder="Email"
+                                     name="intern_email"
+                                     class="form-control"
+                                     aria-label="Sizing example input"
+                                     aria-describedby="inputGroup-sizing-default">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                             <input
+                                     type="password"
+                                     required
+                                     placeholder="Password"
+                                     name="intern_password"
+                                     class="form-control"
+                                     aria-label="Sizing example input"
+                                     aria-describedby="inputGroup-sizing-default">
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <th>
+                            <button type="submit" class="btn btn-primary">
+                                Login
+                            </button>
+                        </th>
+                    </tr>
+                    <tr>
+                        {% if data.4 %}
+                        <tr>
+                        <th>
+                            <div class="alert alert-warning" role="alert">
+                            Not registered yet ? <a href="#" class="alert-link"></a>.
+                                <div>
+                                    {{ data.4 }}
+                                </div>
+                            </div>
+                        </th>
+                        </tr>
+                        {% endif %}
+                    </tr>
+
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+
+{% extends 'common/common.html' %}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="{% static 'images/about_image.png' %}" width="400" height="300" alt="">
+            </div>
+            <div class="col">
+                <div class="eltdf-st-inner">
+                    <h2 class="eltdf-st-title">
+                        About Swayam's Photography			</h2>
+                    <div class="eltdf-separator-holder clearfix  eltdf-separator-left ">
+                        <div class="eltdf-separator" style="border-color: #ff1949;width: 38px;border-bottom-width: 3px;margin-top: 23px;margin-bottom: 9px"></div>
+                    </div>
+                    <h3 class="eltdf-st-text" style="font-size: 25px;margin-top: 150px">
+                        At Swayam's Photography we offer best of class solution for the interns who want to pursue their career as a professional photographer or a enthusiast who likes to explore the world through a lens.
+
+                        Register with us for more !!
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
